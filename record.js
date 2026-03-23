@@ -67,8 +67,11 @@ async function record() {
   console.log(`URL: ${url}`);
   console.log(`결과 저장 위치: ${outputDir}`);
 
-  const browser = await playwright.chromium.launch({ headless: false });
-  const context = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+  const browser = await playwright.chromium.launch({
+    headless: false,
+    args: ['--start-maximized'],
+  });
+  const context = await browser.newContext({ viewport: null });
   const page = await context.newPage();
 
   // request 객체를 key로 사용해서 request↔response를 정확히 매핑
