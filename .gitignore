@@ -1,0 +1,5 @@
+node_modules/
+capture-results*/
+*.log
+.DS_Store
+capture-config.json

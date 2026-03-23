@@ -1,0 +1,54 @@
+{
+  "outputDir": "./capture-results",
+  "headless": false,
+  "scenarios": [
+    {
+      "name": "01-login-page",
+      "url": "https://dev-cgkr.colosseum.kr/login",
+      "waitMs": 2000
+    },
+    {
+      "name": "02-dashboard",
+      "url": "https://dev-cgkr.colosseum.kr/dashboard",
+      "cookies": [
+        {
+          "name": "CSESSIONID",
+          "value": "your-session-id-here",
+          "domain": "dev-cgkr.colosseum.kr",
+          "path": "/"
+        }
+      ],
+      "waitMs": 3000
+    },
+    {
+      "name": "03-api-call-with-action",
+      "url": "https://dev-cgkr.colosseum.kr/some-page",
+      "cookies": [
+        {
+          "name": "CSESSIONID",
+          "value": "your-session-id-here",
+          "domain": "dev-cgkr.colosseum.kr",
+          "path": "/"
+        }
+      ],
+      "actions": [
+        {
+          "type": "wait",
+          "ms": 1000,
+          "description": "페이지 로딩 대기"
+        },
+        {
+          "type": "click",
+          "selector": "button.submit",
+          "description": "제출 버튼 클릭"
+        },
+        {
+          "type": "waitForSelector",
+          "selector": ".result-container",
+          "description": "결과 컨테이너 대기"
+        }
+      ],
+      "waitMs": 2000
+    }
+  ]
+}

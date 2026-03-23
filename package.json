@@ -1,0 +1,17 @@
+{
+  "name": "capture-website",
+  "version": "1.0.0",
+  "description": "웹사이트 스크린샷 + 네트워크 요청 자동 캡처 도구",
+  "main": "capture-website.js",
+  "scripts": {
+    "capture": "node capture-website.js",
+    "record": "node record.js",
+    "test": "node capture-website.js capture-config.example.json"
+  },
+  "keywords": ["screenshot", "network", "curl", "automation", "playwright"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "playwright": "^1.54.2"
+  }
+}
